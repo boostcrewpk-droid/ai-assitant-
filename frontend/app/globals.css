@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-khata-950: #04261c;
+  --color-khata-900: #073b2b;
+  --color-khata-800: #0b5139;
+  --color-khata-700: #0f6b4b;
+  --color-khata-100: #dff3ea;
+  --color-haldi-500: #f2a516;
+  --color-haldi-400: #f7bd3d;
+  --color-haldi-100: #fdf0d2;
+  --color-kaghaz: #fbf7ee;
+  --color-syahi: #1c1a16;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+}
+
+html, body {
+  background: var(--color-kaghaz);
+  color: var(--color-syahi);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+body.locked { overflow: hidden; touch-action: none; }
+
+.ledger-lines {
+  background-image: repeating-linear-gradient(
+    to bottom, transparent 0, transparent 55px, rgba(15, 107, 75, 0.12) 55px, rgba(15, 107, 75, 0.12) 56px
+  );
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: .55; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+.pulse-ring::before, .pulse-ring::after {
+  content: ""; position: absolute; inset: 0; border-radius: 9999px;
+  background: #dc2626; animation: pulse-ring 1.4s ease-out infinite; z-index: -1;
+}
+.pulse-ring::after { animation-delay: .7s; }
+
+@keyframes slide-up { from { transform: translateY(24px); opacity: 0 } to { transform: none; opacity: 1 } }
+.slide-up { animation: slide-up .22s ease-out; }

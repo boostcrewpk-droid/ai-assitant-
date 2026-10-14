@@ -1,0 +1,19 @@
+{
+  "name": "Lala Hisab — Bol kar hisab",
+  "short_name": "Lala Hisab",
+  "description": "Dukaan ka hisab awaaz se: udhar, naqad sale, stock aur kharcha.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbf7ee",
+  "theme_color": "#073b2b",
+  "lang": "ur-PK",
+  "categories": ["business", "finance", "productivity"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
