@@ -6,7 +6,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
    Config & types
    ===================================================================== */
 
-const API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000").replace(/\/+$/, "");
+const API_URL = '';
 const TOKEN_KEY = "lala_hisab_token";
 const MAX_RECORD_SECONDS = 30;
 const PAYWALL_TEXT =
