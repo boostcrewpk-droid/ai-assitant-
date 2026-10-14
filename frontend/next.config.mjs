@@ -1,7 +1,20 @@
+// Server-side only (no NEXT_PUBLIC_ prefix): the browser never sees or calls this URL.
+// The browser calls /api/* on the Vercel domain (same origin = no CORS); Vercel forwards to Render.
+const BACKEND_URL = (process.env.BACKEND_URL || "http://localhost:8000").replace(/\/+$/, "");
+if (process.env.VERCEL && !process.env.BACKEND_URL) {
+  throw new Error("BACKEND_URL is not set. Add it in Vercel -> Settings -> Environment Variables.");
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  async rewrites() {
+    return [
+      { source: "/api/:path*", destination: `${BACKEND_URL}/api/:path*` },
+      { source: "/backend-health", destination: `${BACKEND_URL}/health` },
+    ];
+  },
   async headers() {
     return [
       {
