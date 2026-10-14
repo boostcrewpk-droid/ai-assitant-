@@ -567,13 +567,11 @@ app = FastAPI(title="Lala Hisab API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.allowed_origins,
+    allow_origins=["*"],
     allow_credentials=False,
-    allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
-    allow_headers=["Authorization", "Content-Type"],
-    max_age=86400,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
-
 
 @app.get("/health")
 def health() -> dict:
